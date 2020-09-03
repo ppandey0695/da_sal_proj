@@ -43,9 +43,9 @@ def get_jobs(keyword, num_jobs, verbose, path, sleep_time):
 
         try:
             driver.find_element_by_css_selector('[alt="Close"]').click()  # clicking to the X.
-            print('x out worked')
+            #print('x out worked')
         except NoSuchElementException:
-            print('x out failed')
+            #print('x out failed')
             pass
 
         # Going through each job in this page
@@ -72,7 +72,7 @@ def get_jobs(keyword, num_jobs, verbose, path, sleep_time):
                     time.sleep(5)
 
             try:
-                salary_estimate = driver.find_element_by_xpath('.//span[@class="gray small salary"]').text
+                salary_estimate = driver.find_element_by_xpath('.//span[@class="gray salary"]').text
             except NoSuchElementException:
                 salary_estimate = -1  # You need to set a "not found value. It's important."
 
